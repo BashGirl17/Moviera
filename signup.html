@@ -1,48 +1,102 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/styles/styles.css" />
 
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="styles.css">
-</head>
+    <script>
+      function validate() {
+        var password = document.getElementById("pw").value;
+        var username = document.getElementById("usr");
+        var fname = document.getElementById("fn");
+        var lname = document.getElementById("ln");
+        var rpass = document.getElementById("pwr");
+        if (fname.value == "") {
+          alert("please enter first name");
+          return false;
+        } else if (lname.value == "") {
+          alert("please enter last name");
+          return false;
+        } else if (username.value == "") {
+          alert("please enter username");
+          return false;
+        } else if (password.trim().length < 6 || password.trim().length > 10) {
+          alert("password size must be 6 to 8 characters");
+          return false;
+        } else if (password.search(/[A-Z]/) == -1) {
+          alert("password must contain atleast one Uppercase alphabet");
+          return false;
+        } else if (password.search(/[a-z]/) == -1) {
+          alert("password must contain atleast one Lowercase alphabet");
+          return false;
+        } else if (password.search(/[0-9]/) == -1) {
+          alert("password must contain ateast one number");
+          return false;
+        } else if (password.search(/[^\@\#\$\&\%\:\;\.\,]/) == -1) {
+          alert("password must contain ateast one special character");
+          return false;
+        } else if (rpass.value != password) {
+          alert("Re-entered passwod doesn't match");
+          return false;
+        } else {
+          alert("successfull");
+          return true;
+        }
+      }
+    </script>
+  </head>
 
-<body>
+  <body>
+    <nav>
+      <h3>Moviera</h3>
+      <ul>
+        <li><a href="/index.html"> Explore</a></li>
+        <li><a href="recomend.html"> Recommend</a></li>
+        <li><a href="/profile.html"> Profile</a></li>
 
+        <li>
+          <button onclick="window.location.href='/signup.html'">SignUp</button>
+        </li>
+        <li>
+          <button onclick="window.location.href='/signin.html'">SignIn</button>
+        </li>
+      </ul>
+    </nav>
+    <div class="form_container">
+      <h1>Moviera</h1>
 
-  <div class="form_container">
-    <h2>Sign up</h2>
+      <h2>Sign up</h2>
 
-    <form method="post">
-      <label for="Fname">First name</label>
-      <input type="text" name="fname">
-      <label for="lname">Last name</label>
-      <input type="text" name="lname">
-      <label for="Email">Email</label>
-      <input type="text" name="Email" placeholder="Enter email" required>
-      <label for="Password">Password</label>
-      <input type="password" name="Password" placeholder="Enter password" required>
-      <label for="Pass">Re-enter password</label>
-      <input type="password" name="Pass" placeholder="Re-enter" required>
-      <button type="submit" name="button">Sign up</button>
-      <button type="button" name="button">Cancel</button>
+      <form onsubmit="return validate()">
+        <label for="Fname">First name</label>
+        <input type="text" id="fn" name="firstname" />
+        <label for="lname">Last name</label>
+        <input type="text" id="ln" name="lastname" />
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="usr"
+          name="username"
+          placeholder="your username"
+        />
+        <label for="Email">Email</label>
+        <input type="text" name="Email" placeholder="Enter email" />
+        <label for="Password">Password</label>
+        <input
+          type="password"
+          id="pw"
+          name="Password"
+          placeholder="Enter password"
+        />
+        <label for="Pass">Re-enter password</label>
+        <input type="password" id="pwr" name="Pass" placeholder="Re-enter" />
+        <button type="submit">Sign up</button>
+        <button type="button">Cancel</button>
+      </form>
+    </div>
 
-    </form>
-
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-</body>
-
+    <footer>
+      <p>©All rights reserved 2021 Moviera</p>
+    </footer>
+  </body>
 </html>

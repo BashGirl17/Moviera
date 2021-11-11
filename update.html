@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Moviera</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+  </head>
+  <body>
+    <nav>
+      <h3>Moviera</h3>
+      <ul>
+        <li><a href="/index.html"> Explore</a></li>
+        <li><a href="recomend.html"> Recommend</a></li>
+        <li><a href="/profile.html"> Profile</a></li>
+
+        <li>
+          <button onclick="window.location.href='/signup.html'">SignUp</button>
+        </li>
+        <li>
+          <button onclick="window.location.href='/signin.html'">SignIn</button>
+        </li>
+      </ul>
+    </nav>
+    <div class="form_container">
+      <h1>Update movie</h1>
+      <h2>Enter Movie Details</h2>
+      <form action="" method="post">
+        <label for="email">Movie Name</label>
+        <input type="text" name="email" placeholder="eg.Sheershah" required />
+        <label for="Genre">Genre:</label>
+        <select name="Gnere" id="Genre">
+          <option value="action">Action</option>
+          <option value="horror">Horror</option>
+          <option value="comedy">Comedy</option>
+          <option value="Scific">Science fiction</option>
+          <option value="romance">Romance</option>
+          <option value="thriller">Thriller</option>
+          <option value="Documentary">Documentary</option>
+        </select>
+
+        <label for="Movie_Director">Director</label>
+        <input
+          type="text"
+          name="Movie_Director"
+          placeholder="eg.Vishnuvardhan"
+        />
+        <label for="Movie_release">Release date</label>
+        <input type="date" name="date" />
+        <label for="IMDb_rating">IMDB rating</label>
+        <input
+          type="text"
+          name="IMDb_rating"
+          placeholder="eg.8.7/10 IMDb"
+          required
+        />
+        <button type="submit" name="button">Update</button>
+      </form>
+    </div>
+    <footer>
+      <p>©All rights reserved 2021 Moviera</p>
+    </footer>
+  </body>
+</html>
