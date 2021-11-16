@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Program-2</title>
+  </head>
+  <script>
+    function calculate() {
+      var num = parseInt(prompt("Enter number of elements to store in array"));
+      var arr = [];
+      var even = 0;
+      var odd = 0;
+      for (var i = 0; i < num; i++) {
+        arr[i] = parseInt(prompt("Enter element " + i));
+      }
+      for (var i = 0; i < num; i++) {
+        if (arr[i] % 2 == 0) {
+          even = even + arr[i];
+        } else {
+          odd = odd + arr[i];
+        }
+      }
+      alert(
+        "Sum of all even Element is " +
+          even +
+          "\nSum of all odd elements is " +
+          odd
+      );+
+    }
+  </script>
+  <body>
+    <h2>
+      Write a JavaScript program to accept n elements in an array and find sum
+      of odd elements and sum of even elements.
+    </h2>
+    <label for="">Click to Enter the elements</label>
+    <button onclick="calculate()">Click!</button>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Program-1</title>
+  </head>
+  <script>
+    function factorial() {
+      var num = document.getElementById("num").value;
+      var fact = 0;
+      if (num == "") {
+        alert("Enter number to calculate factorial");
+      } else {
+        while (num--) {
+          fact = fact * num;
+        }
+        alert("factorial of " + num + " is " + fact);
+      }
+    }
+  </script>
+  <body>
+    <h2>
+      Write a JavaScript program to print factorial of a number (user input)
+    </h2>
+    <label for="">Enter number</label>
+    <input type="text" id="num" />
+    <button>calculate</button>
+  </body>
+</html>

@@ -99,6 +99,13 @@ input {
   border: solid 2px #ea4c89;
   box-shadow: 0 0 8px #ea4c89;
 }
+.radio input,
+.radio label,
+.check label,
+.check input {
+  display: inline-block;
+  width: fit-content;
+}
 .form_container select {
   margin: 0 0 3px 0;
   outline: none;
