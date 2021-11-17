@@ -105,6 +105,8 @@ input {
 .check input {
   display: inline-block;
   width: fit-content;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .form_container select {
   margin: 0 0 3px 0;
@@ -220,10 +222,11 @@ p {
 footer {
   height: 100px;
   text-align: center;
-  border-top: 2px solid #f0a500;
+  border-top: 1px solid #cf206c;
+  margin-top: 20px;
   color: white;
-  padding: 10px;
-  background-color: rgb(18, 18, 18);
+  padding: 20px;
+  background-color: #222222;
 }
 footer p {
   font-family: "Courier New", Courier, monospace;

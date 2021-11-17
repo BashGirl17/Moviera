@@ -11,7 +11,6 @@
     </style>
     <script>
       function validate() {
-        event.preventDefault();
         var mname = document.getElementById("mname");
         var x = document.getElementById("Genre");
         var y = x.options[x.selectedIndex].value;
@@ -21,6 +20,8 @@
         var rating = document.getElementById("rating");
         var err = document.getElementById("error");
         var rerror = document.getElementById("rerror");
+        rerror.style.visibility = "hidden";
+        err.style.visibility = "hidden";
         if (
           mname.value == "" &&
           mdirector.value == "" &&
@@ -127,7 +128,7 @@
       </form>
     </div>
     <footer>
-      <p>©All rights reserved 2021 Moviera</p>
+      <p>©Copyright |All rights reserved 2021 Moviera</p>
     </footer>
   </body>
 </html>
