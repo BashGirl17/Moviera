@@ -3,6 +3,61 @@
   <head>
     <title>Moviera</title>
     <link rel="stylesheet" href="styles/styles.css" />
+
+    <style>
+      body {
+        background: url("images/background.jpg") fixed;
+      }
+    </style>
+    <script>
+      function validate() {
+        var mname = document.getElementById("mname");
+        var x = document.getElementById("Genre");
+        var y = x.options[x.selectedIndex].value;
+        var mdirector = document.getElementById("director");
+        var release_date = document.getElementById("redate");
+        var rat = /[1-10]/;
+        var rating = document.getElementById("rating");
+        var err = document.getElementById("error");
+        var rerror = document.getElementById("rerror");
+
+        rerror.style.visibility = "hidden";
+        err.style.visibility = "hidden";
+
+        if (
+          mname.value == "" &&
+          mdirector.value == "" &&
+          release_date.value == "" &&
+          rating.value == ""
+        ) {
+          alert("Please Enter required fields");
+          return false;
+        } else if (rating.value > 10) {
+          rerror.innerHTML = "Ratings must be below 10";
+          rerror.style.visibility = "visible";
+          return false;
+        } else if (y == "select") {
+          err.innerHTML = "Select Genre";
+          err.style.visibility = "visible";
+          return false;
+        } else {
+          alert(
+            "Successful\n" +
+              "\nMovie Name is " +
+              mname.value +
+              "\nMovie Director is " +
+              mdirector.value +
+              "\nRelease Date is " +
+              release_date.value +
+              "\nRatings are " +
+              rating.value +
+              "\nSelected Genre is " +
+              y
+          );
+          return true;
+        }
+      }
+    </script>
   </head>
   <body>
     <nav>
@@ -16,18 +71,47 @@
           <button onclick="window.location.href='signup.html'">SignUp</button>
         </li>
         <li>
-          <button onclick="window.location.href='signin.html'">SignIn</button>
+          <button onclick="window.location.href='ssignin.html'">SignIn</button>
         </li>
       </ul>
     </nav>
     <div class="form_container">
-      <h1>Update movie</h1>
+      <h1>Updates Movie</h1>
       <h2>Enter Movie Details</h2>
-      <form action="" method="post">
-        <label for="email">Movie Name</label>
-        <input type="text" name="email" placeholder="eg.Sheershah" required />
+      <form onsubmit="return validate()" action="">
+        <label for="mname">Movie Name</label>
+        <input
+          type="text"
+          name="mname"
+          placeholder="eg.Sheershah"
+          id="mname"
+          required
+        />
+        <label for="Movie_Director">Director</label>
+        <input
+          type="text"
+          name="Movie_Director"
+          placeholder="eg.Vishnuvardhan"
+          id="director"
+          required
+        />
+        <label for="Movie_release">Release date</label>
+        <input type="date" id="redate" name="redate" required />
+        <label for="IMDb_rating">IMDB rating</label>
+        <input
+          type="number"
+          name="IMDb_rating"
+          placeholder="eg.8.7/10 IMDb"
+          id="rating"
+          required
+        />
+        <p
+          id="rerror"
+          style="visibility: hidden; color: red; font-size: 15px;"
+        ></p>
         <label for="Genre">Genre:</label>
-        <select name="Gnere" id="Genre">
+        <select name="Genre" id="Genre">
+          <option value="select">Select</option>
           <option value="action">Action</option>
           <option value="horror">Horror</option>
           <option value="comedy">Comedy</option>
@@ -36,27 +120,17 @@
           <option value="thriller">Thriller</option>
           <option value="Documentary">Documentary</option>
         </select>
-
-        <label for="Movie_Director">Director</label>
-        <input
-          type="text"
-          name="Movie_Director"
-          placeholder="eg.Vishnuvardhan"
-        />
-        <label for="Movie_release">Release date</label>
-        <input type="date" name="date" />
-        <label for="IMDb_rating">IMDB rating</label>
-        <input
-          type="text"
-          name="IMDb_rating"
-          placeholder="eg.8.7/10 IMDb"
-          required
-        />
-        <button type="submit" name="button">Update</button>
+        <p
+          id="error"
+          style="visibility: hidden; color: red; font-size: 15px;"
+        ></p>
+        <button type="submit">
+          Upload
+        </button>
       </form>
     </div>
     <footer>
-      <p>©All rights reserved 2021 Moviera</p>
+      <p>©Copyright |All rights reserved 2021 Moviera</p>
     </footer>
   </body>
 </html>
